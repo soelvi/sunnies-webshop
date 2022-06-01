@@ -1,12 +1,12 @@
 import Home from './views/Home.vue';
-// import ProjectPage from './views/ProjectPage.vue';
+import ProductFullPage from './views/ProductFullPage.vue';
 
 export default [
-	// { 
-	// 	name: 'projectPage', 
-	// 	path: '/:projectSlug',
-	// 	component: ProjectPage 
-	// },
+	{ 
+		name: 'productFullPage', 
+		path: '/products/:slug',
+		component: ProductFullPage
+	},
 	{ 
 		name: 'home', 
 		path: '/', 

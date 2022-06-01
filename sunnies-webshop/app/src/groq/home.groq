@@ -1,1 +1,21 @@
-*[_type == $product]
+*[_type == 'product'] {
+   ...,
+  
+  productImage {
+  asset-> {
+  url 
+ }
+},
+
+productColor[]-> {
+    productColor
+  },
+
+productStyle[]-> {
+  productStyle
+},
+
+warranty[]-> {
+  productWarranty
+}
+   }

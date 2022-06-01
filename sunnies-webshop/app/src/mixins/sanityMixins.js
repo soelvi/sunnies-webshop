@@ -1,18 +1,19 @@
-// import sanity from '../sanity.js';
+import sanity from '../sanity.js';
 
-// export default {
-// 	data() {
-// 		return {
-// 			loading: true,
-// 			result: null
-// 		}
-// 	},
+export default {
+	data() {
+		return {
+			loading: true,
+			result: null
+		}
+	},
 
-// 	methods: {
-// 		async sanityFetch(query) {
-// 			this.result = await sanity.fetch(query);
-// 			this.loading = false;
-// 		},
+	methods: {
+		//henter inn alle data fra api-query
+		async sanityFetch(query) {
+			this.result = await sanity.fetch(query);
+			this.loading = false;
+		},
 
 		// metaTags(meta) {
 		// 	const currentURL = window.location.origin + this.$route.path;

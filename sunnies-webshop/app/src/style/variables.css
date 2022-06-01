@@ -3,5 +3,11 @@
 	--foreground: black;
 	
 	--font-family: "Arial";
+	--font-style-titles: 'Bebas Neue', cursive;
+	/* --font-style-titles: "Dorsa", sans-serif;   */
 	--font-size: 20px;
+
+	/* --margin-bottom-small: 2%;
+	--margin-bottom-medium: 4%;
+	--margin-bottom-big: 6%; */
 }
