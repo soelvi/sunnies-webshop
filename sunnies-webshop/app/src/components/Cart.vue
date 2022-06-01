@@ -4,7 +4,7 @@
 		<div v-show="toggle" class="cart__items">
 			<div class="cart__item" v-for="(product, index) in cartItems" :key="product._id">
 				<img :src="product.productImage.asset.url" alt="sunglasses" class="product__image">
-				<span>{{ product.productTitle }}</span>
+				<span> {{ product.productTitle }} </span>
 				<span> {{ product.price }} NOK </span>
 
 				<button class="cart__button-remove" @click="removeItem(index)">remove</button>

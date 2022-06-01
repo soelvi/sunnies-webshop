@@ -1,63 +1,59 @@
 <template>
-	<div>
-		HALLO HER SKAL DET BARE VÆRE ETTTTT ENESTE PRODUKT!!! KOMMER SNART
+	<div class="product">
+		<section class="header">
+			<Header />
+		</section>
+		<router-link to="/">back to /home</router-link>
+
+		<div v-if="loading">Loading product...</div>
+		<div v-else class="product__info">
+			
+				<h2> {{ result.productTitle }} </h2>
+
+				<img :src="result.productImage.asset.url" alt="" class="invitation__image">
+ 
+				<div> {{ result.price}} </div>
+		</div>
+		<section class="footer">
+			<Footer />
+		</section>
 	</div>
 </template>
 
 <script>
+import query from '../groq/product.groq?raw';
+import sanityMixins from '../mixins/sanityMixins';
+import Header from '../components/Header.vue';
+import Footer from '../components/Footer.vue';
 
-    export default {
-		 
-		props: {
-			product: {
-					type: Object
-			}
-		},
 
-		methods: {
-			addToCart(product) {
-					this.$store.dispatch('addToCart', product);
-			}
+export default {
+	
+	mixins: [sanityMixins],
+
+	components: {
+		Header,
+		Footer
+	},
+
+	async created() {
+		await this.sanityFetch(query, {
+			slug: this.$route.params.slug
+		});
+	},
+
+	props: {
+		slug: {
+			type: String
 		}
-    }
-/* 
-	********* QUERY *********
-
-	*[slug.current == $slugParameter][0] {
-		_id, 
-
-		title,
-		slug,
-		
-		client-> {
-			name
-		}
-	}
-
-	********* PARAMS *********
-
-	{
-		"slugParameter": "alfa" //men egentlig $route.params.pageID?
-	}
-*/
-
-	// export default {
-	// 	data() {
-	// 		return {
-	// 			loading: true,
-	// 			result: null
-	// 		}
-	// 	},
-		
-	// 	async created() {
-	// 		/* QUERY + PARAMS = sanityQueryURL */
-	// 		const sanityQueryURL = 'https://32td7jzv.api.sanity.io/v2021-10-21/data/query/production?query=*%5Bslug.current%20%3D%3D%20%24slugParameter%5D%5B0%5D%20%7B%0A%09%09_id%2C%20%0A%0A%09%09title%2C%0A%09%09slug%2C%0A%09%09%0A%09%09client-%3E%20%7B%0A%09%09%09name%0A%09%09%7D%0A%09%7D&%24slugParameter=%22alfa%22';
-
-	// 		const sanityResponse = await fetch(sanityQueryURL);
-	// 		const { result } = await sanityResponse.json();
-			
-	// 		this.result = result;
-	// 		this.loading = false;
-	// 	}
-	// }
+	},
+}
 </script>
+
+
+		// methods: {
+		// 	addToCart(product) {
+		// 			this.$store.dispatch('addToCart', product);
+		// 	}
+		// }
+   

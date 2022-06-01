@@ -48,9 +48,13 @@ export default {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
-	/* position: fixed; 
-	left: 0;
-	bottom: 0; */
 	width: 100%;
+}
+
+/* 800px tablet and smaller -- mobile */
+@media screen and (max-width: 800px) { 
+	.footer {
+		font-size: var(--font-size-small);
+	}
 }
 </style>

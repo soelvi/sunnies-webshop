@@ -1,20 +1,20 @@
 <template>
 	<div>
 		<Header/>
-		<Product/>
+		<Products/>
 		<Footer/>
 	</div>
 </template>
 
 <script>
 import Header from '../components/Header.vue';
-import Product from '../components/Product.vue';
+import Products from '../components/Products.vue';
 import Footer from '../components/Footer.vue';
 
 	export default {
 		components: {
 			Header,
-			Product,
+			Products,
 			Footer
 		},
 	}
