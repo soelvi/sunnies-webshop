@@ -18,16 +18,6 @@ export default {
 		getInCart(state){
 			return state.cart.length;
 		},
-
-
-		// cartProducts(state) {
-		// 	return state.cart.map(cartItem => {
-		// 		const product = state.products.find(product => product._id === cartItem._id) 
-		// 		return {
-		// 			quantity: 0,
-		// 		}
-		// 	})
-		// }
 	},
 
 	mutations: {

@@ -10,7 +10,7 @@
 			
 				<h2> {{ result.productTitle }} </h2>
 
-				<img :src="result.productImage.asset.url" alt="" class="invitation__image">
+				<img :src="result.productImage.asset.url" alt="product image" class="invitation__image">
  
 				<div> {{ result.price}} </div>
 		</div>
@@ -49,11 +49,4 @@ export default {
 	},
 }
 </script>
-
-
-		// methods: {
-		// 	addToCart(product) {
-		// 			this.$store.dispatch('addToCart', product);
-		// 	}
-		// }
    
