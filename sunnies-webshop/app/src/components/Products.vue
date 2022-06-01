@@ -2,12 +2,14 @@
 	<div v-if="loading">Loading fresh sunnies...</div>
 		<div v-else class="allProducts">
 			<ul v-for="product, index in result" class="product" :key="product._id">
-				<router-link :to="{ name: 'ProductFullPage', params: { slug: product.slug.current }}">	
-					<img :src="result[index].productImage.asset.url" alt="sunglasses" class="product__images">
-				</router-link>
-
+				<li><img :src="result[index].productImage.asset.url" alt="sunglasses" class="product__images"></li>
 				<li>{{ result[index].productTitle }}</li>
 				<li>{{ result[index].price }} NOK </li>
+				<li>
+					<router-link :to="{ name: 'productFullPage', params: { slug: product.slug.current }}">	
+						<p>Read more..</p>
+					</router-link>
+				</li>
 				<button @click="addProductToCart(product)" class="button__addToCart">Add to cart</button>
 				<div class="overlay">
 					<div class="overlay__text">
