@@ -31,30 +31,23 @@
 </template>
 
 <script>
-export default {
-	data() {
-		return {
-
-		}
-	}
-}
 </script>
 
 <style>
-.footer {
-	background-color: black; 
-	color: white;
-	padding: 50px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	width: 100%;
-}
-
-/* 800px tablet and smaller -- mobile */
-@media screen and (max-width: 800px) { 
 	.footer {
-		font-size: var(--font-size-small);
+		background-color: black; 
+		color: white;
+		padding: 50px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		width: 100%;
 	}
-}
+
+	/* 800px tablet and smaller -- mobile */
+	@media screen and (max-width: 800px) { 
+		.footer {
+			font-size: var(--font-size-small);
+		}
+	}
 </style>

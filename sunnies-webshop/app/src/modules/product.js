@@ -33,22 +33,4 @@ export default {
 			state.cart.splice(itemIndex, 1);
 		}
     },
-
-	 	actions: { 
-		// setToLocalStorage({ state, commit }, product) {
-		// 	// window.localStorage.setItem('cart-example', JSON.stringify(state.shop.cart));
-		// },
-		
-		// getFromLocalStorage() {
-		// 	// window.localStorage.getItem('cart-example')
-		// },
-
-		// removeFromLocalStorage() {
-		// 	// window.localStorage.removeItem('cart-example')
-		// },
-
-		// clearLocalStorage() {
-		// 	// window.localStorage.clear();
-		// }
-	}
 }

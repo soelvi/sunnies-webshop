@@ -1,21 +1,21 @@
 *[_type == 'product'] {
    ...,
   
-  productImage {
-  asset-> {
-  url 
- }
-},
-
-productColor[]-> {
-    productColor
+    productImage {
+    asset-> {
+    url 
+  }
   },
 
-productStyle[]-> {
-  productStyle
-},
+  productColor[]-> {
+      productColor
+    },
 
-warranty[]-> {
-  productWarranty
+  productStyle[]-> {
+    productStyle
+  },
+
+  warranty[]-> {
+    productWarranty
+  }
 }
-   }

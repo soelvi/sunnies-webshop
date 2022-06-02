@@ -6,7 +6,11 @@ export default {
 		{
 			title: 'Product title',
 			name: 'productTitle',
-			type: 'string'
+			type: 'string',
+			validation: Rule => [ 
+				Rule.required().min(5).error('The title needs atleast 5 characters'),
+				Rule.max(15).error('Titles with more than 15 characters are too long')
+         ]
 		},
 		{
 			title: 'Slug',
@@ -21,6 +25,7 @@ export default {
 			title: 'Product image',
 			name: 'productImage',
 			type: 'image',
+			validation: Rule => Rule.required().error('Product must have an image'),
 		},
 		{
 			title: 'Product style',
@@ -30,6 +35,7 @@ export default {
                type: 'reference',
                to: [{ type: 'productStyle'}]
             }],
+			validation: Rule => Rule.required().error('Must fill inn product style')
 		},
 		{
 			title: 'Product color',
@@ -39,11 +45,13 @@ export default {
                type: 'reference',
                to: [{ type: 'productColor'}]
             }],
+			validation: Rule => Rule.required().error('Must fill inn product color')
 		},
 		{
 			title: 'Price',
 			name: 'price',
 			type: 'number',
+			validation: Rule => Rule.required().error('Must fill inn price')
 		},
 		{
 			title: 'Item on sale',
@@ -79,11 +87,16 @@ export default {
                type: 'reference',
                to: [{ type: 'warranty'}]
             }],
+			validation: Rule => Rule.required().error('Must fill inn warranty')
 		},
 		{
 			title: 'Description',
 			name: 'description',
 			type: 'text',
+			validation: Rule => [ 
+				Rule.required().min(5).error('The description needs atleast 5 characters long'),
+         ]
+			
 		}
 	]
 }

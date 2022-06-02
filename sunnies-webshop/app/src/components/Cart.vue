@@ -1,5 +1,5 @@
 <template>
-	<div class="cart">
+	<section class="cart">
 		<button @click="toggle = !toggle" class="showCart"> CART ({{ inCart }}) open/close </button>
 		<div v-show="toggle" class="cart__items">
 			<div class="cart__item" v-for="(product, index) in cartItems" :key="product._id">
@@ -17,7 +17,7 @@
 				<button class="cart__button-payment"> Continue to payment </button>
 			</section> -->
 		</div>
-	</div>
+	</section>
 </template>
 
 <script>
