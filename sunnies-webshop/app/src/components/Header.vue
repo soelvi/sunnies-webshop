@@ -46,4 +46,12 @@
 		justify-content: flex-end;
 		z-index: 1;
 	}
+
+	/* 800px tablet and smaller -- mobile */
+	@media screen and (max-width: 800px) { 
+		.header__title {
+			font-size: 60px;
+			padding-left: 15px;
+		}
+	}
 </style>
